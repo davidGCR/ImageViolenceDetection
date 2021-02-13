@@ -1,0 +1,14 @@
+*.tar
+*.csv
+*.zip
+*.txt
+*.DS_Store
+clipped
+.vscode
+*.log
+wandb
+*.ipynb
+.venv/*
+.venv-python2/*
+.vscode/*
+*.pyc

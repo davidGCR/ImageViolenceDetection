@@ -69,7 +69,7 @@ def main():
     if args.cuda:
         model = model.cuda()
     with open(args.model) as f:
-        model.load_state_dict(torch.load(f)['state_dict'])
+        model.load_state_dict(torch.load(f, map_location=torch.device('cpu') )['state_dict'])
     print("*** calculating the model output of the images in {img_dir}"
             .format(img_dir = args.img_dir))
 
@@ -100,6 +100,7 @@ if __name__ == "__main__":
     parser.add_argument("--cuda",
                         action = "store_true",
                         help = "use cuda?",
+                        default=None
                         )
     parser.add_argument("--workers",
                         type = int,
